@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0A0C0E;
+  --bg-2: #101317;
+  --fg: #EDE7DC;
+  --fg-soft: #9EA5A8;
+  --fg-faint: #6C7378;
+  --amber: #E8913C;
+  --teal: #2E6B72;
+  --rule: rgba(237, 231, 220, 0.13);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+@theme {
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --color-bg: #0A0C0E;
+  --color-bg-2: #101317;
+  --color-fg: #EDE7DC;
+  --color-fg-soft: #9EA5A8;
+  --color-fg-faint: #6C7378;
+  --color-amber: #E8913C;
+  --color-teal: #2E6B72;
+  --color-rule: rgba(237, 231, 220, 0.13);
+  
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* Base resets & typography */
+html, body {
+  background-color: var(--bg);
+  color: var(--fg);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Headings use Plus Jakarta Sans */
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Body text, subheadings, paragraphs, navigation, and buttons use Inter */
+p, span, a, button, input, select, textarea, div, .font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Hero Typography Standards */
+.hero-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-size: clamp(32px, 5.2vw, 54px);
+  color: #FFFFFF;
+}
+
+.hero-subheading {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #F8FAFC;
+  opacity: 0.92;
+}
+
+/* Small labels: 10-12px uppercase, letter-spacing .12-.15em */
+.text-label {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(10px, 1.2vw, 11px);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+}
+
+/* Custom focus styles for clinical keyboard-accessibility */
+*:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+/* Touch targets >= 40px default, >= 44px on touch/mobile screens */
+button, a, input, select {
+  min-height: 40px;
+}
+
+@media (max-width: 768px) {
+  button, a, input, select {
+    min-height: 44px;
+  }
+}
+
+/* Hairline utilities */
+.border-rule {
+  border-color: var(--rule);
+}
+
+.bg-rule {
+  background-color: var(--rule);
+}
+
+/* Responsive clamp typography helpers */
+.clamp-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.65rem, 4.5vw, 2.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.clamp-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Clinical Primary Action Button */
+.btn-primary {
+  background-color: var(--teal);
+  color: #FFFFFF;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.btn-primary:hover {
+  opacity: 0.92;
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Refined Cream App Shell Theme */
+.cream-app {
+  --bg: #EDE7DC;
+  --bg-2: #E3DCCF;
+  --fg: #0A0C0E;
+  --fg-soft: #4A5155;
+  --fg-faint: #636A6E;
+  --amber: #C87121;
+  --teal: #1E5B62;
+  --rule: rgba(10, 12, 14, 0.14);
+  background-color: var(--bg);
+  color: var(--fg);
+  color-scheme: light;
+}
+
+/* Global View Density Modes */
+.density-comfortable {
+  --table-py: 1rem;
+  --table-font-size: 14px;
+  --body-font-size: 15px;
+  --card-padding: 1.5rem;
+  --metric-num-size: 52px;
+  --spacing-gap: 1.5rem;
+}
+
+.density-compact {
+  --table-py: 0.625rem;
+  --table-font-size: 12px;
+  --body-font-size: 13px;
+  --card-padding: 1rem;
+  --metric-num-size: 40px;
+  --spacing-gap: 0.875rem;
+}

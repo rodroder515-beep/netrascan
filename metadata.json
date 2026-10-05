@@ -1,0 +1,6 @@
+{
+  "name": "NetraScan",
+  "description": "Explainable AI for Diabetic Retinopathy Screening in Rural India. AI-assisted screening and triage support system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
